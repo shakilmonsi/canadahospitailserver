@@ -120,6 +120,7 @@ const  verifyAdmin =async (req,res,next)=>{
                 {
                     $project: {
                         name: 1,
+                        price:1,
                         slots: 1,
                         booked: {
                             $map: {
@@ -133,6 +134,7 @@ const  verifyAdmin =async (req,res,next)=>{
                 {
                     $project: {
                         name: 1,
+                        price:1,
                         slots: {
                             $setDifference: ['$slots', '$booked']
                         }
@@ -235,6 +237,24 @@ app.get('/appointmentSpecialty',async(req,res)=>{
             const result = await userCollextion.updateOne(filter, updatedDoc, options);
             res.send(result);
         })
+
+
+// class 77-1 tamproly to update price field on appointment option  
+app.get("/prices" ,async(req,res)=>{
+    const filter = {}
+    const options = {upsert: true}
+    const updatedDoc = {
+        $set: {
+            price:88
+        }
+    }
+    const result=await appointmentOptionCollextion.updateMany(filter,updatedDoc,options)
+res.send(result)
+})
+// class 77-1 tamproly to update price field on appointment option  
+
+
+
         // manageDoctors  indisplay port One 
         app.get('/doctors', verifyJWT,verifyAdmin,async(req,res)=>{
             const query ={};
