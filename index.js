@@ -145,6 +145,8 @@ const  verifyAdmin =async (req,res,next)=>{
         })
 
         /// class 76-2   one data loade  (name)
+        /// class 76-2   one data loade  (name)
+        /// class 76-2   one data loade  (name)
 app.get('/appointmentSpecialty',async(req,res)=>{
     const query ={};
     const result =await appointmentOptionCollextion.find(query).project({name:1}).toArray();
