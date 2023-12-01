@@ -60,6 +60,11 @@ async function run() {
 
 
 // NOTE  make sure you use verfyAdmin after verityJWt  class 76-9
+// NOTE  make sure you use verfyAdmin after verityJWt  class 76-9
+// NOTE  make sure you use verfyAdmin after verityJWt  class 76-9
+// NOTE  make sure you use verfyAdmin after verityJWt  class 76-9
+// NOTE  make sure you use verfyAdmin after verityJWt  class 76-9
+// NOTE  make sure you use verfyAdmin after verityJWt  class 76-9
 const  verifyAdmin =async (req,res,next)=>{
 
     const decodedEmail = req.decoded.email;
